@@ -13,52 +13,7 @@ nano编辑定时任务：nano /jffs/scripts/crontabs/klcb2010
 然后执行/jffs/scripts/set_crontab.sh SSH，用amtm验证定时任务。
 
 4自定义hosts   在/jffs/configs/目录下创建 hosts和dnsmasq.conf.add
-nano  /jffs/configs/hosts    输入以下内容
-127.0.0.1 f12.baidu.com
-127.0.0.1 t-dsp.pinduoduo.com
-127.0.0.1 luimg.baidu.com
-127.0.0.1 wn.pos.baidu.com
-127.0.0.1 mobads.baidu.com
-127.0.0.1 ulogs.umeng.com
-127.0.0.1 ulogs.umengcloud.com
-127.0.0.1 ios.bugly.com
-127.0.0.1 showapi.babybus.com
-127.0.0.1 union.baidu.com
-127.0.0.1 two.fsylr.com
-127.0.0.1 arms-retcode.aliyuncs.com
-127.0.0.1 ott.da.mgtv.com
-127.0.0.1 ys.da.mgtv.com
-127.0.0.1 img.da.mgtv.com
-127.0.0.1 luimg.baidu.com
-127.0.0.1 wn.pos.baidu.com
-127.0.0.1 mobads.baidu.com
-127.0.0.1 ulogs.umeng.com
-127.0.0.1 ulogs.umengcloud.com
-127.0.0.1 ios.bugly.com
-127.0.0.1 showapi.babybus.com
-127.0.0.1 hm.baidu.com
-127.0.0.1 mbd.baidu.com
-127.0.0.1 erebor.douban.com
-127.0.0.1 googletagmanager.com
-127.0.0.1 googlesyndication.com
-127.0.0.1 at3.doubanio.com
-127.0.0.1 mbd.baidu.com
-127.0.0.1 f12.baidu.com
-127.0.0.1 t-dsp.pinduoduo.com
-127.0.0.1 luimg.baidu.com
-127.0.0.1 wn.pos.baidu.com
-127.0.0.1 mobads.baidu.com
-127.0.0.1 ulogs.umeng.com
-127.0.0.1 ulogs.umengcloud.com
-127.0.0.1 ios.bugly.com
-127.0.0.1 showapi.babybus.com
-127.0.0.1 hm.baidu.com
-127.0.0.1 mbd.baidu.com
-127.0.0.1 erebor.douban.com
-127.0.0.1 googletagmanager.com
-127.0.0.1 googlesyndication.com
-127.0.0.1 at3.doubanio.com
-127.0.0.1 mbd.baidu.com
+nano  /jffs/configs/hosts    输入以hosts内容
 
 
 nano /jffs/configs/dnsmasq.conf.add  输入 addn-hosts=/jffs/configs/hosts
