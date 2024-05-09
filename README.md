@@ -1,3 +1,5 @@
+   　      　      　      　      　      　   　      　      　      　      　      　      　      　      　      　      仅适合梅林原版及改版   
+
 1、U盘开机挂载
    　   安装 <pre><code class="language-html">curl -Os https://diversion.ch/amtm/amtm && sh amtm</code></pre>
    　   使用 SSH 　　 输入amtm　　  安装USB disk check at boot　　到所有U盘分区 　　重启路由测试
@@ -10,7 +12,9 @@
 
 
 
-3、定时重启wan （crontabs文件夹及里边的klcb2010需要手动创建　　restart_wan.log以及set_crontab.log　　最后scripts文件夹赋值777）
+3、定时重启wan （crontabs文件夹及里边的klcb2010需要手动创建　　restart_wan.log以及set_crontab.log　　
+
+   　   最后scripts文件夹赋值777）
 
    　   重启路由后需要手动运行"/jffs/scripts/set_crontab.sh"　　
 
