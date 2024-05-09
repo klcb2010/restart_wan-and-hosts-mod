@@ -1,30 +1,31 @@
-#!/bin/bash  
-# /jffs/scripts/restart_wan.sh  
-  
-# ÉèÖÃÈÕÖ¾ÎÄ¼þÂ·¾¶£¨Óë½Å±¾Í¬Ä¿Â¼£©  
-LOG_FILE="/jffs/scripts/restart_wan.log"  
-  
-# »ñÈ¡µ±Ç°ÈÕÆÚµÄÈÕ²¿·Ö  
-CURRENT_DAY=$(date +"%d")  
-  
-# ¼ì²éµ±Ç°ÈÕÆÚÊÇ·ñÎªÅ¼Êý£¨ÄÜ±»2Õû³ý£©  
-if ((CURRENT_DAY % 2 == 0)); then  
-    # Èç¹ûÊÇÅ¼ÊýÈÕÆÚ£¬ÔòÖ´ÐÐÒÔÏÂ²Ù×÷  
-    echo "$(date) - Starting restart_wan.sh on even day" >> "$LOG_FILE"  
-  
-    # Ö´ÐÐÖØÆôÃüÁî£¬²¢½«Êä³öÒ²¼ÇÂ¼µ½ÈÕÖ¾ÖÐ  
-    /sbin/service restart_wan >> "$LOG_FILE" 2>&1  
-  
-    # ¼ì²éÉÏÒ»¸öÃüÁîµÄÍË³ö×´Ì¬£¬²¢ÔÚÈÕÖ¾ÖÐ¼ÇÂ¼  
-    if [ $? -eq 0 ]; then  
-        echo "$(date) - Service restart_wan restarted successfully on even day" >> "$LOG_FILE"  
-    else  
-        echo "$(date) - Failed to restart service restart_wan on even day" >> "$LOG_FILE"  
-    fi  
-  
-    # Ð´ÈëÖ´ÐÐ½áÊøµÄÈÕÖ¾  
-    echo "$(date) - Finished restart_wan.sh on even day" >> "$LOG_FILE"  
-else  
-    # Èç¹û²»ÊÇÅ¼ÊýÈÕÆÚ£¬Ôò¼ÇÂ¼ÈÕÖ¾µ«²»Ö´ÐÐÖØÆô  
-    echo "$(date) - Skipping restart_wan.sh on odd day" >> "$LOG_FILE"  
+#!/bin/bash
+
+# è„šæœ¬ç‰ˆæœ¬ä¿¡æ¯
+SCRIPT_VERSION="1.0"
+RUN_DATE=$(date +"%Y-%m-%d")
+
+# è®¾ç½®æ—¥å¿—æ–‡ä»¶è·¯å¾„
+LOG_FILE="/jffs/scripts/restart_wan.log"
+
+# èŽ·å–å½“å‰æ—¥æœŸçš„æ—¥éƒ¨åˆ†
+CURRENT_DAY=$(date +"%d")
+
+# æ£€æŸ¥å½“å‰æ—¥æœŸæ˜¯å¦ä¸ºå¶æ•°
+if ((CURRENT_DAY % 2 == 0)); then
+    # å¦‚æžœæ˜¯å¶æ•°æ—¥æœŸï¼Œåˆ™æ‰§è¡Œä»¥ä¸‹æ“ä½œ
+    echo "[$RUN_DATE $SCRIPT_VERSION] - Starting restart_wan.sh on even day" >> "$LOG_FILE"
+
+    # æ‰§è¡Œé‡å¯å‘½ä»¤ï¼Œå¹¶å°†è¾“å‡ºä¹Ÿè®°å½•åˆ°æ—¥å¿—ä¸­
+    echo "[$RUN_DATE $SCRIPT_VERSION] - Executing service restart_wan..." >> "$LOG_FILE"
+    if [[ $(service restart_wan > /dev/null 2>&1) == 0 ]]; then
+        echo "[$RUN_DATE $SCRIPT_VERSION] - Service restart_wan restarted successfully on even day" >> "$LOG_FILE"
+    else
+        echo "[$RUN_DATE $SCRIPT_VERSION] - Failed to restart service restart_wan on even day" >> "$LOG_FILE"
+    fi
+
+    # å†™å…¥æ‰§è¡Œç»“æŸçš„æ—¥å¿—
+    echo "[$RUN_DATE $SCRIPT_VERSION] - Finished restart_wan.sh on even day" >> "$LOG_FILE"
+else
+    # å¦‚æžœä¸æ˜¯å¶æ•°æ—¥æœŸï¼Œåˆ™è®°å½•æ—¥å¿—ä½†ä¸æ‰§è¡Œé‡å¯
+    echo "[$RUN_DATE $SCRIPT_VERSION] - Skipping restart_wan.sh on odd day" >> "$LOG_FILE"
 fi
