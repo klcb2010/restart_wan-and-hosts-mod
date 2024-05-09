@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 脚本版本信息
-SCRIPT_VERSION="1.0"
+SCRIPT_VERSION="1.1"
 RUN_DATE=$(date +"%Y-%m-%d")
 
 # 设置日志文件路径
@@ -29,3 +29,6 @@ else
     # 如果不是偶数日期，则记录日志但不执行重启
     echo "[$RUN_DATE $SCRIPT_VERSION] - Skipping restart_wan.sh on odd day" >> "$LOG_FILE"
 fi
+
+# 删除超过 7 天的日志文件
+find /path/to/logs -type f -mtime +7 -exec rm -rf {} \;
