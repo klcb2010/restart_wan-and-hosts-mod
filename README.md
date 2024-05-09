@@ -7,7 +7,7 @@
 
 
 2、在线更新SS规则 　　重启或者升级插件后失效
-  SSH输入
+     　   SSH输入
    　      　   <pre><code class="language-html">sed -i 's/^URL_MAIN.*/URL_MAIN="https:\/\/raw.githubusercontent.com\/qxzg\/Actions\/3.0\/fancyss_rules"/g' /koolshare/scripts/ss_rule_update.sh</code></pre>
 
 
