@@ -1,0 +1,2 @@
+00 05 * * * /jffs/scripts/restart_wan.sh #wan_reboot#
+30 04 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#
