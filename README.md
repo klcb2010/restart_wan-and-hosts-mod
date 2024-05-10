@@ -22,7 +22,7 @@
  
    　   Crtl+O保存　　enter确认　　Crtl+X退出
 
-   　   然后执行/jffs/scripts/set_crontab.sh SSH　　用amtm验证定时任务。
+   　   然后执行/jffs/scripts/set_crontab.sh 　　用amtm验证定时任务。
 
 
 
