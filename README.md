@@ -32,4 +32,4 @@
    　   nano /jffs/configs/dnsmasq.conf.add　　输入 addn-hosts=/jffs/configs/hosts
 
    　   执行service restart_dnsmasq重启　　dnsmasq 服务
-   　   然后dnsmasq.conf.add会消失 hosts也会跑到 /tmp/etc/ 鬼知道什么原因 他妈的
+   　   然后dnsmasq.conf.add会消失   nano/tmp/etc/hosts  鬼知道什么原因 他妈的
