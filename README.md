@@ -12,7 +12,7 @@
 
 
 
-3、定时重启wan （crontabs文件夹及里边的klcb2010需要手动创建　　restart_wan.log以及set_crontab.log　　
+3、定时重启wan （crontabs文件夹及里边的klcb2010需要手动创建　
 
    　   最后scripts文件夹赋值777）
 
