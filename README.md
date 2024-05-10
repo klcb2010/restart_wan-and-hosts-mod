@@ -12,9 +12,7 @@
 
 
 
-3、定时重启wan （crontabs文件夹及里边的klcb2010需要手动创建　
-
-   　   最后scripts文件夹赋值777）
+3、定时重启wan （crontabs文件夹及里边的klcb2010需要手动创建　最后scripts文件夹赋值777）
 
    　   重启路由后需要手动运行"/jffs/scripts/set_crontab.sh"　　
 
