@@ -1,3 +1,3 @@
 0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 0 9 * * * /koolshare/scripts/ss_rule_update.sh #supdate#
-0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#
+0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts_ss_rule#
