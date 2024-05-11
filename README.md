@@ -24,7 +24,7 @@
    　  
    　   脚本定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 
-4、自定义hosts  　只保留7天日志
+4、自定义hosts  　只保留7天日志  重启路由器后 只需要运行一次
    　   整合了自定义规则的更新链接
    　   /jffs/scripts/hosts   编辑完毕  
    　   运行 /jffs/scripts/copy_hosts.sh
@@ -33,11 +33,10 @@
 
    　  
 
-5、定时任务2 3 4 总结：
+5、定时任务2 3 总结：
 
 <pre><code class="language-html">0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
-30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#
-0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#</code></pre>
+30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#</code></pre>
 
 
 6、一键导入上面三个脚本并运行
