@@ -8,6 +8,7 @@ target_file="/tmp/etc/hosts"
   
 # 日志文件路径  
 log_file="/jffs/scripts/copy_hosts.log"  
+TMP_LOG_FILE="/jffs/scripts/copy_hosts.tmp"  
   
 # 检查日志文件是否存在，如果不存在则创建并设置权限  
 if [ ! -f "$log_file" ]; then  
@@ -15,6 +16,21 @@ if [ ! -f "$log_file" ]; then
     chmod 777 "$log_file"  
     echo "Log file $log_file created and permissions set to 777." >> "$log_file"  
 fi  
+  
+# 计算七天前的日期  
+current_timestamp=$(date +%s)  
+days_to_subtract=$((7 * 86400))  
+cutoff_timestamp=$((current_timestamp - days_to_subtract))  
+cutoff_date=$(date -d @$cutoff_timestamp +%Y-%m-%d)  
+  
+# 保留最近七天的日志记录  
+awk -v cutoff_date="$cutoff_date" '  
+    {  
+        # 假设时间戳位于每行的开始，格式为"YYYY-MM-DD HH:MM:SS"  
+        match($0, /^([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}).*/, arr);  
+        if (arr[1] >= cutoff_date) print;  
+    }  
+' "$log_file" > "$TMP_LOG_FILE" && mv "$TMP_LOG_FILE" "$log_file"  
   
 # 检查源文件是否存在  
 if [ ! -f "$source_file" ]; then  
@@ -39,8 +55,13 @@ else
     exit 1  
 fi  
   
-# 脚本的其余部分（如果有的话）  
-# ...  
+# 记录脚本结束时间（Unix 时间戳）  
+end_timestamp=$(date +%s)  
+echo "Script ended at $(date +%Y-%m-%d_%H:%M:%S)" >> "$log_file"  
+  
+# 计算运行时间（秒）  
+duration=$((end_timestamp - start_timestamp))  
+echo "Script ran for $duration seconds." >> "$log_file"
   
 # 脚本结束  
 exit 0
