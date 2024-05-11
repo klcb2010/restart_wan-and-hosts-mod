@@ -24,12 +24,6 @@
 
 
 
-4、自定义hosts   在/jffs/configs/目录下创建 hosts和dnsmasq.conf.add
-
-   　   nano  /jffs/configs/hosts　　输入以hosts内容
-
-
-   　   nano /jffs/configs/dnsmasq.conf.add　　输入 addn-hosts=/jffs/configs/hosts
-
-   　   执行service restart_dnsmasq重启　　dnsmasq 服务
-   　   然后dnsmasq.conf.add会消失   nano /tmp/etc/hosts  鬼知道什么原因 他妈的
+4、自定义hosts   /jffs/scripts/hosts   编辑完毕  运行 /jffs/scripts/copy_hosts.sh
+   　   执行killall -SIGHUP dnsmasq重启　　dnsmasq 服务  终端重新联网失效
+   　  
