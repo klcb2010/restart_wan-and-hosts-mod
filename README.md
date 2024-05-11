@@ -36,3 +36,7 @@
 <pre><code class="language-html">0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#
 0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#</code></pre>
+
+
+6、一键导入上面三个脚本
+   　   /jffs/scripts/hosts-wan-cron.sh
