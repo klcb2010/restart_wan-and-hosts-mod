@@ -21,7 +21,8 @@
    　   Crtl+O保存　　enter确认　　Crtl+X退出
 
    　   然后执行/jffs/scripts/set_crontab.sh 　　用amtm验证定时任务。
-   　   定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
+   　  
+       定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 
 4、自定义hosts 
    　   /jffs/scripts/hosts   编辑完毕  运行 /jffs/scripts/copy_hosts.sh
