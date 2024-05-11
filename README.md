@@ -8,7 +8,7 @@
 
 2、在线更新SS规则 　需要关闭自带定时　重启或者升级插件后失效
      　   SSH输入
-   　      　   <pre><code class="language-html">sed -i 's/^URL_MAIN.*/URL_MAIN="https:\/\/raw.githubusercontent.com\/qxzg\/Actions\/3.0\/fancyss_rules"/g' /koolshare/scripts/ss_rule_update.sh</code></pre>
+   　      　   <pre><code class="language-html">sed -i 's#^URL_MAIN.*#URL_MAIN="https://mirror.ghproxy.com/https%3A%2F%2Fraw.githubusercontent.com%2Fqxzg%2FActions%2F3.0%2Ffancyss_rules"#g' /koolshare/scripts/ss_rule_update.sh</code></pre>
    　   定时任务：30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#
 
 
