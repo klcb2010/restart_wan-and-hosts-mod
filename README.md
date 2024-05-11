@@ -24,6 +24,7 @@
 
 
 
-4、自定义hosts   /jffs/scripts/hosts   编辑完毕  运行 /jffs/scripts/copy_hosts.sh
+4、自定义hosts 
+   　   /jffs/scripts/hosts   编辑完毕  运行 /jffs/scripts/copy_hosts.sh
    　   执行killall -SIGHUP dnsmasq重启　　dnsmasq 服务  终端重新联网失效
    　  
