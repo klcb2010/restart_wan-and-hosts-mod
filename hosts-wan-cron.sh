@@ -20,8 +20,16 @@ chmod +x "$DEST_DIR/copy_hosts.sh"
 chmod +x "$DEST_DIR/restart_wan.sh"  
 chmod +x "$DEST_DIR/set_crontab.sh"  
   
-# 注意：以下命令将hosts文件设置为777权限，这通常是不安全的  
-# 但如果你确实需要这样做，请确保你了解潜在的安全风险  
-chmod 777 "$CRONTAB_DIR/hosts"  
+# 注意：以下命令将运行这些脚本。确保它们没有潜在的安全风险。  
+# 你可以根据需要添加任何必要的参数或环境变量。  
   
-echo "文件已成功下载并放置到指定目录。"
+# 运行 copy_hosts.sh  
+"$DEST_DIR/copy_hosts.sh"  
+  
+# 运行 restart_wan.sh（请谨慎执行，因为它可能会重启你的WAN连接）  
+"$DEST_DIR/restart_wan.sh"  
+  
+# 运行 set_crontab.sh（这可能会修改cron作业，所以请谨慎）  
+"$DEST_DIR/set_crontab.sh"  
+  
+echo "文件已成功下载，并且相关脚本已运行。"
