@@ -25,8 +25,11 @@
    　   运行 /jffs/scripts/copy_hosts.sh
    　   执行killall -SIGHUP dnsmasq重启 dnsmasq 服务  
    　   脚本定时任务：0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#
+       
 5、编辑定时任务 日志永久保留   重启路由器后 只需要运行一次
-   　   编辑 nano /jffs/scripts/crontabs/klcb2010 完毕  运行 /jffs/scripts/copy_hosts.sh 即可更新定时任务
+   　   编辑 nano /jffs/scripts/crontabs/klcb2010 完毕  运行 /jffs/scripts/copy_hosts.sh
+       
+   　   即可更新定时任务
    　  
 
 6、定时任务2 3 总结：
