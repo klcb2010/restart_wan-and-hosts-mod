@@ -18,7 +18,9 @@
    　  
    　   脚本定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 
-4、【copy_hosts.sh】自定义hosts  　可能经常更新  所以 只保留7天日志  重启路由器后 必须运行一次  否则与 2 同时失效
+4、【copy_hosts.sh】自定义hosts  　可能经常更新  所以 只保留7天日志  重启路由器后 必须运行一次  
+
+   　   否则与 2 同时失效
    　   
    　   整合了自定义规则的更新链接
    　   nano /jffs/scripts/hosts   编辑完毕  
