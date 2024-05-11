@@ -1,7 +1,7 @@
 #!/bin/bash  
   
-# 定义目录和文件URL  
-BASE_URL="https://raw.githubusercontent.com/klcb2010/restart_wan-and-hosts-mod/main/"  
+# 定义目录和文件URL，使用ghproxy作为代理  
+BASE_URL="https://mirror.ghproxy.com/https://raw.githubusercontent.com/klcb2010/restart_wan-and-hosts-mod/main/"  
 DEST_DIR="/jffs/scripts/"  
 CRONTAB_DIR="$DEST_DIR/crontabs/"  
   
