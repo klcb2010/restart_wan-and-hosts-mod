@@ -26,7 +26,8 @@
 
 4、自定义hosts  　只保留7天日志
    　   整合了自定义规则的更新链接
-   　   /jffs/scripts/hosts   编辑完毕  运行 /jffs/scripts/copy_hosts.sh
+   　   /jffs/scripts/hosts   编辑完毕  
+   　   运行 /jffs/scripts/copy_hosts.sh
    　   执行killall -SIGHUP dnsmasq重启 dnsmasq 服务  
    　   脚本定时任务：0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#
 
