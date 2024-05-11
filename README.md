@@ -28,7 +28,7 @@
        
 5、编辑定时任务 日志永久保留   重启路由器后 只需要运行一次
    　  
-   　   编辑 nano /jffs/scripts/crontabs/klcb2010 完毕  运行 /jffs/scripts/copy_hosts.sh
+   　   编辑 nano /jffs/scripts/crontabs/klcb2010 完毕  运行 /jffs/scripts/set_crontab.sh
        
    　   即可更新定时任务
    　  
