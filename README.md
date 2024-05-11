@@ -38,5 +38,5 @@
 0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#</code></pre>
 
 
-6、一键导入上面三个脚本
+6、一键导入上面三个脚本并运行
    　   /jffs/scripts/hosts-wan-cron.sh
