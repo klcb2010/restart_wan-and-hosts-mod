@@ -1,12 +1,44 @@
+# Title: StevenBlack/hosts
+#
+# This hosts file is a merged collection of hosts from reputable sources,
+# with a dash of crowd sourcing via GitHub
+#
+# Date: 04 May 2024 02:31:28 (UTC)
+# Number of unique domains: 128,270
+#
+# Fetch the latest version of this file: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+# Project home page: https://github.com/StevenBlack/hosts
+# Project releases: https://github.com/StevenBlack/hosts/releases
+#
+#     放在/jffs/scripts/
+
+127.0.0.1 localhost
+127.0.0.1 localhost.localdomain
+127.0.0.1 local
+255.255.255.255 broadcasthost
+::1 localhost
+::1 ip6-localhost
+::1 ip6-loopback
+ff00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+0.0.0.0 0.0.0.0
+
+# Custom host records are listed here.
+
+
+# End of custom host records.
+# Start StevenBlack
+
+#=====================================
+# Title: Hosts contributed by Steven Black
+# http://stevenblack.com
 127.0.0.1 f12.baidu.com
 127.0.0.1 t-dsp.pinduoduo.com
 127.0.0.1 luimg.baidu.com
 127.0.0.1 wn.pos.baidu.com
-127.0.0.1 mobads.baidu.com
-127.0.0.1 ulogs.umeng.com
-127.0.0.1 ulogs.umengcloud.com
-127.0.0.1 ios.bugly.com
-127.0.0.1 showapi.babybus.com
 127.0.0.1 union.baidu.com
 127.0.0.1 two.fsylr.com
 127.0.0.1 arms-retcode.aliyuncs.com
@@ -31,11 +63,6 @@
 127.0.0.1 t-dsp.pinduoduo.com
 127.0.0.1 luimg.baidu.com
 127.0.0.1 wn.pos.baidu.com
-127.0.0.1 mobads.baidu.com
-127.0.0.1 ulogs.umeng.com
-127.0.0.1 ulogs.umengcloud.com
-127.0.0.1 ios.bugly.com
-127.0.0.1 showapi.babybus.com
 127.0.0.1 hm.baidu.com
 127.0.0.1 mbd.baidu.com
 127.0.0.1 erebor.douban.com
