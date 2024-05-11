@@ -31,7 +31,7 @@
 
    　  
 
-5、定时任务2 3 4总结：
+5、定时任务2 3 4 总结：
 
 <pre><code class="language-html">0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#
