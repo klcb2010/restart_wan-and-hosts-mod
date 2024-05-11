@@ -9,7 +9,7 @@
 2、在线更新SS规则 　需要关闭自带定时　重启或者升级插件后失效
      　   SSH输入
    　      　   <pre><code class="language-html">sed -i 's#^URL_MAIN.*#URL_MAIN="https://mirror.ghproxy.com/https%3A%2F%2Fraw.githubusercontent.com%2Fqxzg%2FActions%2F3.0%2Ffancyss_rules"#g' /koolshare/scripts/ss_rule_update.sh</code></pre>
-   　   定时任务：30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#
+   　   定时任务：没有  命令已经整合到hosts
 
 
 3、定时重启wan （crontabs文件夹及里边的klcb2010需要手动创建　最后scripts文件夹赋值777）
