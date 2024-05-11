@@ -20,7 +20,7 @@
 
 4、自定义hosts  　可能经常更新  所以 只保留7天日志  重启路由器后 只需要运行一次
    　   
-       整合了自定义规则的更新链接
+   　   整合了自定义规则的更新链接
    　   nano /jffs/scripts/hosts   编辑完毕  
    　   运行 /jffs/scripts/copy_hosts.sh
    　   执行killall -SIGHUP dnsmasq重启 dnsmasq 服务  
