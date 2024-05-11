@@ -14,30 +14,25 @@
 
 3、定时重启wan  　只保留7天日志
 
-   　   重启路由后需要手动运行"/jffs/scripts/set_crontab.sh"　　
-
-   　   nano编辑定时任务：nano /jffs/scripts/crontabs/klcb2010
- 
-   　   Crtl+O保存　　enter确认　　Crtl+X退出
-
-   　   然后执行/jffs/scripts/set_crontab.sh 　　用amtm验证定时任务。
+   　   根据 5 来执行相关操作　　用amtm验证定时任务。
    　  
    　   脚本定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 
-4、自定义hosts  　只保留7天日志  重启路由器后 只需要运行一次
+4、自定义hosts  　可能经常更新  所以 只保留7天日志  重启路由器后 只需要运行一次
    　   整合了自定义规则的更新链接
-   　   /jffs/scripts/hosts   编辑完毕  
+   　   nano /jffs/scripts/hosts   编辑完毕  
    　   运行 /jffs/scripts/copy_hosts.sh
    　   执行killall -SIGHUP dnsmasq重启 dnsmasq 服务  
    　   脚本定时任务：0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#
-
+5、编辑定时任务 日志永久保留 懒得加代码  重启路由器后 只需要运行一次
+   　   编辑 nano /jffs/scripts/crontabs/klcb2010 完毕  运行 /jffs/scripts/copy_hosts.sh 即可更新定时任务
    　  
 
-5、定时任务2 3 总结：
+6、定时任务2 3 总结：
 
 <pre><code class="language-html">0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#</code></pre>
 
 
-6、一键导入上面三个脚本并运行
+7、一键导入上面三个脚本并运行
    　   /jffs/scripts/hosts-wan-cron.sh
