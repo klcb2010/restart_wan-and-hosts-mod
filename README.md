@@ -12,7 +12,7 @@
    　   脚本定时任务：30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#
 
 
-3、定时重启wan  只保留7天日志
+3、定时重启wan  　只保留7天日志
 
    　   重启路由后需要手动运行"/jffs/scripts/set_crontab.sh"　　
 
@@ -24,7 +24,7 @@
    　  
    　   脚本定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 
-4、自定义hosts  只保留7天日志 整合了自定义规则的更新链接
+4、自定义hosts  　只保留7天日志 整合了自定义规则的更新链接
    　   /jffs/scripts/hosts   编辑完毕  运行 /jffs/scripts/copy_hosts.sh
    　   执行killall -SIGHUP dnsmasq重启 dnsmasq 服务  
    　   脚本定时任务：0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#
