@@ -8,6 +8,7 @@ target_file="/tmp/etc/hosts"
 
 # 日志文件路径
 log_file="/jffs/scripts/copy_hosts.log"
+TMP_LOG_FILE="/jffs/scripts/copy_hosts.tmp"
 
 # 记录脚本开始时间
 start_time=$(date +%s)
@@ -18,6 +19,18 @@ if [ ! -f "$log_file" ]; then
     chmod 777 "$log_file"
     echo "Log file $log_file created and permissions set to 777." >> "$log_file"
 fi
+
+# 计算七天前的 Unix 时间戳
+cutoff_timestamp=$(( $(date +%s) - 7 * 24 * 60 * 60 ))
+
+# 保留最近七天的日志记录
+awk -v cutoff_timestamp="$cutoff_timestamp" '
+    $0 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}/ {
+        timestamp_str = substr($0, 1, 19)
+        timestamp = mktime(gensub(/[- :]/," ","g",timestamp_str))
+        if (timestamp > cutoff_timestamp) print
+    }
+' "$log_file" > "$TMP_LOG_FILE" && mv "$TMP_LOG_FILE" "$log_file"
 
 # 检查目标文件是否存在
 if [ -f "$target_file" ]; then
@@ -44,10 +57,6 @@ if [ $? -eq 0 ]; then
     # 还原文件权限
     chmod 644 "$target_file"
     echo "$(date +'%Y-%m-%d %H:%M:%S') Restored permissions of $target_file to 644 after updating." >> "$log_file"
-
-    # 删除目标文件末尾的空行
-    awk '{ if (NR>1 || $0!="") print }' "$target_file" > "$target_file.tmp" && mv "$target_file.tmp" "$target_file"
-    echo "$(date +'%Y-%m-%d %H:%M:%S') Removed trailing blank lines from $target_file." >> "$log_file"
 else
     echo "$(date +'%Y-%m-%d %H:%M:%S') Error occurred while downloading the file." >> "$log_file"
     exit 1
