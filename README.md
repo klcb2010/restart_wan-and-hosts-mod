@@ -1,4 +1,4 @@
-   　      　      　      　      　      　      　      　      　 仅适合梅林原版及改版　　修正原版及改版的定时任务缺陷与WiFi断流
+   　      　      　      　      　      　      　      　      　 仅适合梅林原版及改版　　用于修正原版及改版的定时任务缺陷与WiFi断流
 
 1、U盘开机挂载及定时任务前提条件
    　   安装 <pre><code class="language-html">/usr/sbin/curl -Os https://diversion.ch/amtm/amtm && sh amtm</code></pre>
