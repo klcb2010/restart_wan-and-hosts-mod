@@ -6,7 +6,7 @@
 
 
 
-2、【链接整合到第 4 点】在线更新SS规则 　 需要关闭插件自带定时　重启路由或者升级插件后失效 
+2、【链接已经整合到第 4 点】在线更新SS规则 　 需要关闭插件自带定时　重启路由或者升级插件后失效 
      　   SSH输入
    　      　   <pre><code class="language-html">sed -i 's#^URL_MAIN.*#URL_MAIN="https://mirror.ghproxy.com/https%3A%2F%2Fraw.githubusercontent.com%2Fqxzg%2FActions%2F3.0%2Ffancyss_rules"#g' /koolshare/scripts/ss_rule_update.sh</code></pre>
    　   脚本定时任务：30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#
