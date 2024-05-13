@@ -18,12 +18,12 @@
    　  
    　   脚本定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 
-4、【copy_hosts.sh】自定义hosts  　可能经常更新  所以 只保留7天日志  重启路由器后 必须运行一次  
+4、【copy_hosts.sh】自定义hosts  　在线更新   只保留7天日志  重启路由器后 必须运行一次  
 
    　   否则与 2 同时失效
    　   
-   　   整合了自定义规则的更新链接
-   　   nano /jffs/scripts/hosts   编辑完毕  
+   　   整合了SS规则的更新链接
+   　   
    　   运行 /jffs/scripts/copy_hosts.sh
    　   执行killall -SIGHUP dnsmasq重启 dnsmasq 服务  
    　   脚本定时任务：0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#
