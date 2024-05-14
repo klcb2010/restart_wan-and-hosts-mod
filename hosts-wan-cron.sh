@@ -38,7 +38,7 @@ chmod 777 "$CRONTAB_DIR/klcb2010"
 # 运行 restart_wan.sh（请谨慎执行，因为它可能会重启你的WAN连接）  
 "$DEST_DIR/restart_wan.sh"  
   
-# 运行 set_crontab.sh，将klcb2010文件内容添加到crontab（假设set_crontab.sh能够处理这种情况）  
-"$DEST_DIR/set_crontab.sh" "$CRONTAB_DIR/klcb2010"  
+# 运行 set_crontab.sh
+"$DEST_DIR/set_crontab.sh"
   
 echo "文件已成功下载，并且相关脚本已运行。klcb2010文件的权限已被设置为777。"
