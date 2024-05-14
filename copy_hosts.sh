@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 源文件 URL
-source_url="https://mirror.ghproxy.com/https://raw.githubusercontent.com/klcb2010/restart_wan-and-hosts-mod/main/hosts"
+source_url="https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-and-hosts-mod/main/hosts"
 
 # 目标文件路径
 target_file="/tmp/etc/hosts"
