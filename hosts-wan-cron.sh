@@ -43,12 +43,12 @@ function execute_script {
 download_file "$BASE_URL/copy_hosts.sh" "$DEST_DIR_SCRIPTS/copy_hosts.sh"  
 download_file "$BASE_URL/restart_wan.sh" "$DEST_DIR_SCRIPTS/restart_wan.sh"  
 download_file "$BASE_URL/set_crontab.sh" "$DEST_DIR_SCRIPTS/set_crontab.sh"  
+download_file "$BASE_URL/set_crontab.sh" "$DEST_DIR_SCRIPTS/klcb2010"  
   
 # 赋予执行权限  
 chmod_script "$DEST_DIR_SCRIPTS/copy_hosts.sh"  
 chmod_script "$DEST_DIR_SCRIPTS/restart_wan.sh"  
 chmod_script "$DEST_DIR_SCRIPTS/set_crontab.sh"  
-chmod_script "$DEST_DIR_SCRIPTS/klcb2010"  
   
 # 执行脚本  
 execute_script "$DEST_DIR_SCRIPTS/copy_hosts.sh"  
