@@ -12,8 +12,7 @@ mkdir -p "$CRONTAB_DIR"
 # 下载文件  
 curl -L -o "$DEST_DIR/copy_hosts.sh" "$BASE_URL/copy_hosts.sh"  
 curl -L -o "$DEST_DIR/restart_wan.sh" "$BASE_URL/restart_wan.sh"  
-curl -L -o "$DEST_DIR/set_crontab.sh" "$BASE_URL/set_crontab.sh"  
-curl -L -o "$DEST_DIR/hosts" "$BASE_URL/hosts"  
+curl -L -o "$DEST_DIR/set_crontab.sh" "$BASE_URL/set_crontab.sh"
 curl -L -o "$CRONTAB_DIR/klcb2010" "$BASE_URL/klcb2010"  
   
 # 检查文件是否成功下载  
