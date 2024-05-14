@@ -9,39 +9,43 @@ DEST_DIR_CRONTABS="$DEST_DIR_SCRIPTS/crontabs/"
 mkdir -p "$DEST_DIR_SCRIPTS"  
 mkdir -p "$DEST_DIR_CRONTABS"  
   
-# 下载文件  
-curl -L -o "$DEST_DIR_SCRIPTS/copy_hosts.sh" "$BASE_URL/copy_hosts.sh"  
-curl -L -o "$DEST_DIR_SCRIPTS/restart_wan.sh" "$BASE_URL/restart_wan.sh"  
-curl -L -o "$DEST_DIR_SCRIPTS/set_crontab.sh" "$BASE_URL/set_crontab.sh"  
-curl -L -o "$DEST_DIR_CRONTABS/klcb2010" "$BASE_URL/klcb2010"  
-  
-# 检查文件是否成功下载  
-for file in "$DEST_DIR_SCRIPTS/copy_hosts.sh" "$DEST_DIR_SCRIPTS/restart_wan.sh" "$DEST_DIR_SCRIPTS/set_crontab.sh" "$DEST_DIR_CRONTABS/klcb2010"; do  
-    if [ ! -f "$file" ]; then  
-        echo "Error: File $file was not downloaded successfully."  
+# 下载文件并记录日志  
+function download_file {  
+    local url=$1  
+    local dest=$2  
+    curl -L -o "$dest" "$url" || {  
+        echo "Error: Failed to download $url to $dest"  
         exit 1  
-    fi  
-done  
+    }  
+    echo "Downloaded $url to $dest"  
+}  
+  
+download_file "$BASE_URL/copy_hosts.sh" "$DEST_DIR_SCRIPTS/copy_hosts.sh"  
+download_file "$BASE_URL/restart_wan.sh" "$DEST_DIR_SCRIPTS/restart_wan.sh"  
+download_file "$BASE_URL/set_crontab.sh" "$DEST_DIR_SCRIPTS/set_crontab.sh"  
+download_file "$BASE_URL/klcb2010" "$DEST_DIR_CRONTABS/klcb2010"  
   
 # 赋予执行权限给shell脚本文件  
 chmod +x "$DEST_DIR_SCRIPTS/copy_hosts.sh"  
 chmod +x "$DEST_DIR_SCRIPTS/restart_wan.sh"  
 chmod +x "$DEST_DIR_SCRIPTS/set_crontab.sh"  
   
-# 注意：klcb2010 似乎是一个 crontab 文件，因此不需要执行权限  
+# 执行脚本并记录日志  
+function execute_script {  
+    local script=$1  
+    echo "Executing $script..."  
+    "$script" || {  
+        echo "Error: $script failed with exit code $?"  
+        exit 1  
+    }  
+    echo "$script executed successfully."  
+}  
   
-# 执行脚本（请谨慎操作，特别是restart_wan.sh）  
-echo "Executing copy_hosts.sh..."  
-"$DEST_DIR_SCRIPTS/copy_hosts.sh"  
+execute_script "$DEST_DIR_SCRIPTS/copy_hosts.sh"  
   
-# 如果您想要执行 restart_wan.sh，请取消下面的注释，但请谨慎操作  
-echo "Executing restart_wan.sh..."  
-"$DEST_DIR_SCRIPTS/restart_wan.sh"  
+# 重启WAN连接的脚本，请谨慎使用  
+# execute_script "$DEST_DIR_SCRIPTS/restart_wan.sh"  # 取消注释以执行  
   
-echo "Executing set_crontab.sh..."  
-"$DEST_DIR_SCRIPTS/set_crontab.sh"  
+execute_script "$DEST_DIR_SCRIPTS/set_crontab.sh"  
   
-# 假设 set_crontab.sh 是用来设置 crontab 的，并且它使用 klcb2010 文件作为输入  
-# 您可能需要在 set_crontab.sh 脚本中指定正确的 crontab 文件路径  
-  
-echo "Scripts executed successfully."
+echo "All scripts executed successfully."
