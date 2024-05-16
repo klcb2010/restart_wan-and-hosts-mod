@@ -1,4 +1,5 @@
 # 第三方在线规则: https://github.com/StevenBlack/hosts
+# 与科学上网插件冲突   开启科学上网 自定义hosts失效
 127.0.0.1 localhost.localdomain localhost
 192.168.50.1 GT-AX6000-A0A0. GT-AX6000-A0A0
 192.168.50.1 GT-AX6000-A0A0.local
