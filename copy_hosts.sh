@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 源文件 URL 与S科学上网插件冲突   开启科学上网 自定义hosts失效
+# 源文件 URL 与科学上网插件冲突   开启科学上网 自定义hosts失效
 source_url="https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-and-hosts-mod/main/hosts"
 
 # 目标文件路径
