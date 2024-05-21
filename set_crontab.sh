@@ -10,7 +10,7 @@ LOG_FILE="/jffs/scripts/set_crontab.log"
 echo "$(date): set_crontab.sh start" >> "$LOG_FILE"  
   
 # cron  
-CRON_FILE="/jffs/scripts/klcb2010"  
+CRON_FILE="/jffs/scripts/cron"  
 CRONTAB_FILE="/var/spool/cron/crontabs/$USER"  
   
 # 检查CRON_FILE是否存在，如果不存在则尝试创建  
