@@ -44,4 +44,6 @@
 7、【hosts-wan-cron.sh】一键导入上面三个脚本
 <pre><code class="language-html">curl -L -o /jffs/scripts/hosts-wan-cron.sh https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-and-hosts-mod/main/hosts-wan-cron.sh</code></pre>
 
-赋值 <pre><code class="language-html">chmod 777 /jffs/scripts/hosts-wan-cron.sh</code></pre>
+赋值后执行 <pre><code class="language-html">chmod 777 /jffs/scripts/hosts-wan-cron.sh</code></pre>
+
+
