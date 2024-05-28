@@ -1,6 +1,35 @@
 # 第三方在线规则: https://github.com/StevenBlack/hosts
 # 与科学上网插件冲突   开启科学上网 自定义hosts失效
 127.0.0.1 localhost.localdomain localhost
+192.168.50.1 GT-AX6000. GT-AX6000
+192.168.50.1 GT-AX6000.local
+192.168.50.1 www.asusrouter.com
+192.168.50.1 asusrouter.com
+192.168.50.1 www.asusrepeater.com
+192.168.50.1 asusrepeater.com
+192.168.50.1 www.asusap.com
+192.168.50.1 asusap.com
+192.168.50.1 www.asusswitch.com
+192.168.50.1 asusswitch.com
+192.168.50.1 router.asus.com
+192.168.50.1 repeater.asus.com
+192.168.50.1 ap.asus.com
+192.168.50.1 www.asusnetwork.net
+192.168.50.1 asusswitch.net
+192.168.50.1 asusrepeater.net
+192.168.50.1 asusap.net
+45.151.132.50 www.423down.com
+192.168.50.1 zenwifi.net
+192.168.50.1 expertwifi.net
+192.168.50.1 AX6000. AX6000
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+240e:338:262:5f91::1 GT-AX6000. GT-AX6000
+240e:338:262:5f91::1 GT-AX6000.local
+127.0.0.1 localhost.localdomain localhost
 192.168.50.1 GT-AX6000-A0A0. GT-AX6000-A0A0
 192.168.50.1 GT-AX6000-A0A0.local
 192.168.50.1 www.asusrouter.com
@@ -21,13 +50,6 @@
 192.168.50.1 zenwifi.net
 192.168.50.1 expertwifi.net
 192.168.50.1 AX6000. AX6000
-::1 ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-240e:338:262:13e1::1 GT-AX6000-A0A0. GT-AX6000-A0A0
-240e:338:262:13e1::1 GT-AX6000-A0A0.local
 0.0.0.0 f12.baidu.com
 0.0.0.0 t-dsp.pinduoduo.com
 0.0.0.0 luimg.baidu.com
@@ -65,3 +87,10 @@ ff02::2 ip6-allrouters
 0.0.0.0 mbd.baidu.com
 0.0.0.0 bbs.binmt.cc
 0.0.0.0 123pan.com
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+240e:338:262:13e1::1 GT-AX6000-A0A0. GT-AX6000-A0A0
+240e:338:262:13e1::1 GT-AX6000-A0A0.local
