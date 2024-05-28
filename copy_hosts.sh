@@ -57,6 +57,10 @@ if [ $? -eq 0 ]; then
     # 还原文件权限
     chmod 644 "$target_file"
     echo "$(date +'%Y-%m-%d %H:%M:%S') Restored permissions of $target_file to 644 after updating." >> "$log_file"
+
+    # 添加新功能：重启dnsmasq服务
+    killall -SIGHUP dnsmasq
+    echo "$(date +'%Y-%m-%d %H:%M:%S') dnsmasq service restarted with SIGHUP signal." >> "$log_file"
 else
     echo "$(date +'%Y-%m-%d %H:%M:%S') Error occurred while downloading the file." >> "$log_file"
     exit 1
