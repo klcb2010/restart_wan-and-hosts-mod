@@ -35,19 +35,32 @@ else
     exit 1
 fi
 
-# 3. 执行 hosts-wan-cron.sh 脚本两次
+# 3. 运行 hosts-wan-cron.sh 脚本
+cron_output=$(/jffs/scripts/hosts-wan-cron.sh)
+cron_status=$?
+
+# 记录运行操作的日志
+if [ $cron_status -eq 0 ]; then
+    end_time=$(date +'%Y-%m-%d %H:%M:%S')
+    echo "[$end_time] Execution of hosts-wan-cron.sh was successful." >> "$log_file"
+else
+    end_time=$(date +'%Y-%m-%d %H:%M:%S')
+    echo "[$end_time] Error executing hosts-wan-cron.sh: $cron_output" >> "$log_file"
+fi
+
+# 4. 运行 set_crontab.sh 脚本两次
 for i in {1..2}
 do
-    cron_output=$(/jffs/scripts/hosts-wan-cron.sh)
-    cron_status=$?
+    set_crontab_output=$(/jffs/scripts/set_crontab.sh)
+    set_crontab_status=$?
 
-    # 记录执行操作的日志
-    if [ $cron_status -eq 0 ]; then
+    # 记录运行操作的日志
+    if [ $set_crontab_status -eq 0 ]; then
         end_time=$(date +'%Y-%m-%d %H:%M:%S')
-        echo "[$end_time] Execution of hosts-wan-cron.sh attempt $i was successful." >> "$log_file"
+        echo "[$end_time] Execution of set_crontab.sh attempt $i was successful." >> "$log_file"
     else
         end_time=$(date +'%Y-%m-%d %H:%M:%S')
-        echo "[$end_time] Error executing hosts-wan-cron.sh on attempt $i: $cron_output" >> "$log_file"
+        echo "[$end_time] Error executing set_crontab.sh on attempt $i: $set_crontab_output" >> "$log_file"
     fi
 done
 
