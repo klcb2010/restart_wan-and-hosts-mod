@@ -47,3 +47,5 @@
 赋值后执行 <pre><code class="language-html">chmod 777 /jffs/scripts/hosts-wan-cron.sh</code></pre>
 
 
+8、改进：使用脚本执行第七步，运行install_and_run.sh
+
