@@ -85,8 +85,6 @@ ff02::2 ip6-allrouters
 0.0.0.0 googlesyndication.com
 0.0.0.0 at3.doubanio.com
 0.0.0.0 mbd.baidu.com
-0.0.0.0 bbs.binmt.cc
-0.0.0.0 123pan.com
 ::1 ip6-localhost ip6-loopback
 fe00::0 ip6-localnet
 ff00::0 ip6-mcastprefix
