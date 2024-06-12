@@ -18,7 +18,7 @@
    　  
    　   脚本定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 
-4、已删除  与SS插件冲突
+4、【hosts】已删除  与SS插件冲突
        
 5、【set_crontab.sh】编辑定时任务 日志永久保留   重启路由器后 必须运行一次  否则失效
    　  
