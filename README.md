@@ -34,7 +34,7 @@
 
 
 7、【restart_wan-cron-ss.sh】一键导入上面三个脚本
-<pre><code class="language-html">curl -L -o /jffs/scripts/hosts-wan-cron.sh https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-cron-ss-mod/main/restart_wan-cron-ss.sh/code></pre>
+<pre><code class="language-html">curl -L -o /jffs/scripts/hosts-wan-cron.sh https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-cron-ss-mod/main/restart_wan-cron-ss.sh/<code></pre>
 
 赋值后执行 <pre><code class="language-html">chmod 777 /jffs/scripts/restart_wan-cron-ss.sh</code></pre>
 
