@@ -18,15 +18,7 @@
    　  
    　   脚本定时任务：0 5 * * 0,1,3,5 /jffs/scripts/restart_wan.sh #wan_reboot#
 
-4、【copy_hosts.sh】自定义hosts  　在线更新   只保留7天日志  重启路由器后 必须运行一次  
-
-   　   否则与 2 同时失效
-   　   
-   　   整合了SS规则的更新链接
-   　   
-   　   运行 /jffs/scripts/copy_hosts.sh
-   　   执行killall -SIGHUP dnsmasq重启 dnsmasq 服务  
-   　   脚本定时任务：0 10 * * 1 /jffs/scripts/copy_hosts.sh #hosts#
+4、已删除  与SS插件冲突
        
 5、【set_crontab.sh】编辑定时任务 日志永久保留   重启路由器后 必须运行一次  否则失效
    　  
@@ -41,10 +33,10 @@
 30 13 * * * /bin/sh /koolshare/scripts/ss_rule_update.sh #supdate#</code></pre>
 
 
-7、【hosts-wan-cron.sh】一键导入上面三个脚本
-<pre><code class="language-html">curl -L -o /jffs/scripts/hosts-wan-cron.sh https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-and-hosts-mod/main/hosts-wan-cron.sh</code></pre>
+7、【restart_wan-cron-ss.sh】一键导入上面三个脚本
+<pre><code class="language-html">curl -L -o /jffs/scripts/hosts-wan-cron.sh https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-cron-ss-mod/main/restart_wan-cron-ss.sh/code></pre>
 
-赋值后执行 <pre><code class="language-html">chmod 777 /jffs/scripts/hosts-wan-cron.sh</code></pre>
+赋值后执行 <pre><code class="language-html">chmod 777 /jffs/scripts/restart_wan-cron-ss.sh</code></pre>
 
 
 8、改进：使用脚本执行第七步，运行install_and_run.sh
