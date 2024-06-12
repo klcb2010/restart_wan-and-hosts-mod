@@ -6,8 +6,8 @@ log() {
 }
 
 # 下载脚本并记录日志
-log "Downloading hosts-wan-cron.sh..."
-curl -L -o /jffs/scripts/hosts-wan-cron.sh https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-and-hosts-mod/main/hosts-wan-cron.sh
+log "Downloading restart_wan-cron-ss.sh..."
+curl -L -o /jffs/scripts/restart_wan-cron-ss.sh https://mirror.ghproxy.com/raw.githubusercontent.com/klcb2010/restart_wan-cron-ss-mod/main/restart_wan-cron-ss.sh
 if [ $? -eq 0 ]; then
     log "Download successful."
 else
@@ -16,8 +16,8 @@ else
 fi
 
 # 设置执行权限并记录日志
-log "Granting execute permissions to hosts-wan-cron.sh..."
-chmod 777 /jffs/scripts/hosts-wan-cron.sh
+log "Granting execute permissions to restart_wan-cron-ss.sh..."
+chmod 777 /jffs/scripts/restart_wan-cron-ss.sh
 if [ $? -eq 0 ]; then
     log "Permissions granted successfully."
 else
@@ -27,12 +27,12 @@ fi
 
 # 运行 hosts-wan-cron.sh 两次并记录日志
 for i in {1..2}; do
-    log "Running hosts-wan-cron.sh attempt $i..."
+    log "Running restart_wan-cron-ss.sh attempt $i..."
     /jffs/scripts/hosts-wan-cron.sh
     if [ $? -eq 0 ]; then
-        log "hosts-wan-cron.sh attempt $i was successful."
+        log "restart_wan-cron-ss.sh attempt $i was successful."
     else
-        log "hosts-wan-cron.sh attempt $i failed."
+        log "restart_wan-cron-ss.sh attempt $i failed."
     fi
 done
 
