@@ -28,22 +28,11 @@ fi
 # 运行 hosts-wan-cron.sh 两次并记录日志
 for i in {1..2}; do
     log "Running restart_wan-cron-ss.sh attempt $i..."
-    /jffs/scripts/hosts-wan-cron.sh
+    /jffs/scripts/restart_wan-cron-ss.sh
     if [ $? -eq 0 ]; then
         log "restart_wan-cron-ss.sh attempt $i was successful."
     else
         log "restart_wan-cron-ss.sh attempt $i failed."
-    fi
-done
-
-# 运行 set_crontab.sh 两次并记录日志
-for i in {1..2}; do
-    log "Running set_crontab.sh attempt $i..."
-    /jffs/scripts/set_crontab.sh
-    if [ $? -eq 0 ]; then
-        log "set_crontab.sh attempt $i was successful."
-    else
-        log "set_crontab.sh attempt $i failed."
     fi
 done
 
