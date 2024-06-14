@@ -6,5 +6,4 @@
 
 
 
-下载运行 install_and_run.sh
-
+下载 赋值777  运行 restart_wan-cron-ss.sh
