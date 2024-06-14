@@ -1,5 +1,4 @@
-#!/bin/sh  
-  
+#!/bin/sh
 # cron  
 USER="klcb2010"  
   
@@ -8,7 +7,10 @@ LOG_FILE="/jffs/scripts/set_crontab.log"
   
 #  
 echo "$(date): set_crontab.sh start" >> "$LOG_FILE"  
-  
+
+# 等待一段时间确保系统初始化完成
+sleep 30
+
 # cron  
 CRON_FILE="/jffs/scripts/cron"  
 CRONTAB_FILE="/var/spool/cron/crontabs/$USER"  
