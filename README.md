@@ -4,6 +4,6 @@
    　   安装 <pre><code class="language-html">/usr/sbin/curl -Os https://diversion.ch/amtm/amtm && sh amtm</code></pre>
    　   使用 SSH 　　 输入amtm　　  安装USB disk check at boot　　到所有U盘分区 　　重启路由测试
 
-
+2、SS更新管理先打开要更新的内容  再禁用
 
 下载 restart_wan-cron-ss.sh 赋值777  运行 
