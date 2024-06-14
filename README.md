@@ -6,4 +6,4 @@
 
 
 
-下载 赋值777  运行 restart_wan-cron-ss.sh
+下载 restart_wan-cron-ss.sh 赋值777  运行 
