@@ -6,4 +6,4 @@
 
 2、SS更新管理先打开要更新的内容  再禁用
 
-下载 restart_wan-cron-ss.sh 赋值777  运行 
+3、下载 restart_wan-cron-ss.sh 赋值777  运行 
