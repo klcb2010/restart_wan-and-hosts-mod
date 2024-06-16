@@ -11,3 +11,5 @@
 
 4、设定开机自动执行 在jffs/scripts/post-mount里添加<pre><code class="language-html">#!/bin/sh
 /jffs/scripts/set_crontab.sh &</code></pre>
+
+5、在线安装 <pre><code class="language-html">mkdir -p /jffs/scripts/ && curl -o /jffs/scripts/restart_wan-cron-ss.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/klcb2010/restart_wan-cron-ss-mod/main/restart_wan-cron-ss.sh && chmod 777 /jffs/scripts/restart_wan-cron-ss.sh</code></pre>
